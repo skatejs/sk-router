@@ -39,7 +39,7 @@ The example above loads everything up front. However, in a large app, you'd prob
 
 1. Use a function as your component instead of a constructor.
 2. Call `import()` in the function.
-3. Ensure the module you import contains a default export that is a custom element constructor.
+3. Ensure the module you import contains a default export that can be anything that `page` takes, as mentioned above.
 
 ```js
 const lazyRoute = (
