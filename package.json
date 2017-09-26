@@ -1,0 +1,30 @@
+{
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "env",
+          "flow",
+          "react",
+          "stage-0"
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "./node_modules"
+    ]
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "@skatejs/renderer-lit-html": "0.0.0",
+    "lit-html": "^0.6.0",
+    "skatejs": "^5.0.0-beta.3"
+  }
+}
