@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@skatejs/bore": "^4.0.1",
-    "@skatejs/ssr": "^0.14.0",
+    "@skatejs/ssr": "^0.15.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-custom-element-classes": "^0.1.0",
