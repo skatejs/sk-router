@@ -1,11 +1,20 @@
 /** @jsx h */
 
-import withLitHtml from '@skatejs/renderer-lit-html';
 import page from 'page';
-import { html, render } from 'lit-html/lib/lit-extended';
 import { define, props, withComponent } from 'skatejs';
+import { h } from '@skatejs/val';
 
-const Component = withComponent(withLitHtml());
+class Component extends withComponent() {
+  rendererCallback(renderRoot, renderCallback) {
+    const { firstChild } = renderRoot;
+    const dom = renderCallback();
+    if (firstChild) {
+      renderRoot.replaceChild(dom, firstChild);
+    } else {
+      renderRoot.appendChild(dom);
+    }
+  }
+}
 
 export const Link = define(
   class Link extends Component {

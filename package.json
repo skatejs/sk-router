@@ -1,7 +1,54 @@
 {
   "babel": {
     "env": {
+      "es": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": false
+            }
+          ],
+          "flow",
+          "react",
+          "stage-0"
+        ]
+      },
+      "esnext": {
+        "presets": [
+          "es2016",
+          "es2017",
+          "flow",
+          "react",
+          "stage-0"
+        ]
+      },
+      "node": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "node": "6.0.0"
+              }
+            }
+          ],
+          "flow",
+          "react",
+          "stage-0"
+        ]
+      },
       "test": {
+        "plugins": [
+          [
+            "module-resolver",
+            {
+              "alias": {
+                "skatejs": "./node_modules/skatejs/umd"
+              }
+            }
+          ]
+        ],
         "presets": [
           "env",
           "flow",
@@ -12,19 +59,45 @@
     }
   },
   "devDependencies": {
-    "jest": "^20.0.4"
+    "@skatejs/bore": "^4.0.1",
+    "@skatejs/ssr": "^0.14.0",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-custom-element-classes": "^0.1.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "conartist": "^0.12.0",
+    "jest": "^20.0.4",
+    "jest-in-case": "^1.0.2",
+    "module-alias": "^2.0.1"
+  },
+  "files": [
+    "es/",
+    "esnext/",
+    "node/"
+  ],
+  "main": "node/index.js",
+  "module": "es/index.js",
+  "esnext": "esnext/index.js",
+  "scripts": {
+    "build:es": "BABEL_ENV=es babel src --out-dir es",
+    "build:esnext": "BABEL_ENV=esnext babel src --out-dir esnext",
+    "build:node": "BABEL_ENV=node babel src --out-dir node",
+    "test": "jest"
   },
   "jest": {
     "modulePathIgnorePatterns": [
       "./node_modules"
-    ]
-  },
-  "scripts": {
-    "test": "jest"
+    ],
+    "testEnvironment": "@skatejs/ssr/jest"
   },
   "dependencies": {
-    "@skatejs/renderer-lit-html": "0.0.0",
-    "lit-html": "^0.6.0",
+    "@skatejs/val": "^0.3.1",
+    "page": "^1.7.1",
     "skatejs": "^5.0.0-beta.3"
   }
 }
