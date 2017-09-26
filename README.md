@@ -10,7 +10,7 @@ npm install @skatejs/sk-router
 
 ## Usage
 
-In these examples we've used the hyperscript `h` export in `@skatejs/val` to create *real* DOM using JSX so that we can express them in a readable manner while still setting complex data types (which you cannot do with HTML).
+In these examples we've used the hyperscript `h` export in [@skatejs/val](https://github.com/skatejs/val) to create *real* DOM using JSX so that we can express them in a readable manner while still setting complex data types ***(which you cannot do with HTML)***.
 
 ```js
 /** @jsx h */
