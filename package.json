@@ -99,5 +99,26 @@
     "@skatejs/val": "^0.3.1",
     "page": "^1.7.1",
     "skatejs": "^5.0.0-beta.3"
-  }
+  },
+  "name": "@skatejs/sk-router",
+  "description": "> A web component router that's compatible with code-splitting out of the box.",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skatejs/sk-router.git"
+  },
+  "keywords": [
+    "web",
+    "component",
+    "router",
+    "skatejs"
+  ],
+  "author": "Trey Shugart <treshugart@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skatejs/sk-router/issues"
+  },
+  "homepage": "https://github.com/skatejs/sk-router#readme"
 }
