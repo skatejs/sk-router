@@ -9,8 +9,12 @@ class Component extends withComponent() {
     const { firstChild } = renderRoot;
     const dom = renderCallback();
     if (firstChild) {
-      renderRoot.replaceChild(dom, firstChild);
-    } else {
+      if (dom) {
+        renderRoot.replaceChild(dom, firstChild);
+      } else {
+        renderRoot.removeChild(firstChild);
+      }
+    } else if (dom) {
       renderRoot.appendChild(dom);
     }
   }
@@ -46,8 +50,8 @@ export const Route = define(
     propsUpdatedCallback(next, prev) {
       let { PageToRender } = next;
       if (PageToRender) {
-        if (typeof PageToRender === 'function' && !PageToRender.prototype) {
-          PageToRender = PageToRender();
+        if (typeof PageToRender === 'function') {
+          PageToRender = new PageToRender();
         }
         if (PageToRender.then) {
           PageToRender.then(Page => (this.PageToRender = Page.default || Page));
