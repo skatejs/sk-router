@@ -10,8 +10,8 @@ cases(
   'render',
   dom => {
     return mount(dom).wait(w => {
-      expect(w.node.innerHTML).toMatchSnapshot();
+      expect(w.node.shadowRoot.innerHTML).toMatchSnapshot();
     });
   },
-  [<Link />, <Link href="/test" />]
+  [<Link />, <Link href="/test" />, <Link css="a { color: #333; }" />]
 );

@@ -23,15 +23,17 @@ class Component extends withComponent() {
 export const Link = define(
   class Link extends Component {
     static props = {
+      css: props.string,
       href: props.string
     };
     go = e => {
       e.preventDefault();
       page.show(this.href);
     };
-    renderCallback({ href }) {
+    renderCallback({ css, href }) {
       return (
         <a href={href} events={{ click: this.go }}>
+          <style>{css}</style>
           <slot />
         </a>
       );
