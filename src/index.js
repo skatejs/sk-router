@@ -52,7 +52,7 @@ export const Route = define(
     propsUpdatedCallback(next, prev) {
       let { PageToRender } = next;
       if (PageToRender) {
-        if (typeof PageToRender === 'function') {
+        if (PageToRender.constructor === Function) {
           PageToRender = new PageToRender();
         }
         if (PageToRender.then) {
