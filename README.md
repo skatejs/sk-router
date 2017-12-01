@@ -1,3 +1,5 @@
+___This has been moved to the [skatejs](https://github.com/skatejs/skatejs) monorepo!___
+
 # sk-router
 
 > A web component router that's compatible with code-splitting out of the box.
